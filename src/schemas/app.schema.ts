@@ -1,0 +1,36 @@
+import * as Joi from '@hapi/joi';
+
+// Schema de validacion de config
+export const configValidationSchema = Joi.object({
+  EXPRESS_PORT: Joi.number().default(3056),
+  APP_NAME: Joi.string().required(),
+  NEST_ENV: Joi.string().required(),
+  FASTIFY_PORT: Joi.number().default(3056),
+  FASTIFY_FM_HTTP: Joi.string(),
+  FASTIFY_FM_LOGGER: Joi.string(),
+  TIMEOUT_CONNECTION: Joi.number().required(),
+  TOKEN_SERVICE_API_TOKEN_ENDPOINT: Joi.string().required(),
+  TOKEN_SERVICE_API_TOKEN_EXPIRY_MINUTES: Joi.number().required(),
+  TOKEN_SERVICE_API_APIKEY: Joi.string().required(),
+  TOKEN_SERVICE_API_AUTH_HEADER: Joi.string().required(),
+  TOKEN_SERVICE_API_REQUEST_TIMEOUT: Joi.number().required(),
+  AUTHORIZATION_API_KEY: Joi.string().required(),
+  AUTHORIZATION_ENABLED: Joi.string().required(),
+  GET_CUSTOMER_INTERBANK_INFO_ENDPOINT: Joi.string().required(),
+  GET_CUSTOMER_INTERBANK_INFO_CHANNEL: Joi.string().required(),
+  GET_CUSTOMER_INTERBANK_INFO_BRANCH: Joi.string().required(),
+  GET_CUSTOMER_INTERBANK_INFO_TIMEOUT: Joi.number().required(),
+  TRANSFER_EXECUTE_ENDPOINT: Joi.string().required(),
+  TRANSFER_EXECUTE_CHANNEL: Joi.string().required(),
+  TRANSFER_EXECUTE_COMMERCE: Joi.string().required(),
+  TRANSFER_EXECUTE_TIMEOUT: Joi.number().required(),
+  RABBIT_USER: Joi.string().required(),
+  RABBIT_PASS: Joi.string().required(),
+  RABBIT_HOST: Joi.string().required(),
+  RABBIT_PORT: Joi.string().required(),
+  RABBIT_VHOST: Joi.string().required(),
+  RABBIT_PROTOCOL: Joi.string().required(),
+  CHANNEL_TRANSACTION_ID: Joi.string().required(),
+  EXCHANGE_PROCESS_TRANSACTION: Joi.string().required(),
+  QUEUE_TRANSACTION_LOG: Joi.string().required()
+});
